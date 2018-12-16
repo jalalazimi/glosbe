@@ -5,11 +5,23 @@ import { compose, withState, withHandlers } from 'recompose';
 import Select from 'react-select';
 import theme from '../../styles/theme';
 import Lang from './data.json';
+import Swap from './swap';
 
 const HeaderRow = styled.header`
   height: 80px;
   background: #0b3953;
   font-size: 14px;
+
+  .swap {
+    cursor: pointer;
+    transition: all ease 0.25s;
+    :hover {
+      transform: scale(1.1);
+    }
+    :active {
+      transform: scale(1.3);
+    }
+  }
 
   .react-select__control {
     background: #f6f6f6;
@@ -35,7 +47,8 @@ const Header = ({
   sourceLanguage,
   targetLanguage,
   handleSourceLanguageChange,
-  handleTargetLanguageChange
+  handleTargetLanguageChange,
+  swap
 }: Props) => (
   <ThemeProvider theme={theme}>
     <HeaderRow className="container-fluid pt-4">
@@ -49,7 +62,15 @@ const Header = ({
             options={options}
           />
         </div>
-        <div className="col-2">Change</div>
+        <div
+          className="col-2 text-center pt-2 swap"
+          role="button"
+          tabIndex="0"
+          onClick={() => {}}
+          onKeyPress={swap}
+        >
+          <Swap />
+        </div>
         <div className="col-5">
           <Select
             className="react-select-container"
@@ -83,6 +104,15 @@ const enhance = compose(
       updateTargetLanguage
     }) => selectedOption => {
       updateTargetLanguage(selectedOption);
+    },
+    swap: ({
+      updateTargetLanguage,
+      sourceLanguage,
+      updateSourceLanguage,
+      targetLanguage
+    }) => () => {
+      updateTargetLanguage(sourceLanguage);
+      updateSourceLanguage(targetLanguage);
     }
   })
 );
