@@ -1,11 +1,18 @@
 const theme = {
-  primary: '#28384e',
+  pure: '#f6f6f6',
+  light_blue: '#53add4',
+  blue: '#3e74af',
+  pink: '#a14666',
+  primary: '#0b3953',
+
   primary_light: '#354960',
   primary_ultra_light: '#52627b',
   primary_dark: '#011227',
+
   secondary: '#8abf06',
   secondary_light: '#bef24c',
   secondary_dark: '#578e00',
+
   white: '#fff',
   black: '#000',
   gray_lightest: '#fafafa',
