@@ -20,6 +20,10 @@ const HeaderRow = styled.header`
     }
     :active {
       transform: scale(1.3);
+      outline: none;
+    }
+    :focus {
+      outline: none;
     }
   }
 
@@ -66,7 +70,7 @@ const Header = ({
           className="col-2 text-center pt-2 swap"
           role="button"
           tabIndex="0"
-          onClick={() => {}}
+          onClick={swap}
           onKeyPress={swap}
         >
           <Swap />
