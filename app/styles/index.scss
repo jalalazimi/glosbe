@@ -1,0 +1,49 @@
+@import 'fonts';
+@import 'bootstrap';
+
+html {
+  background: $ay-gray-blue;
+  -webkit-text-size-adjust: 100%;
+  height: 100%;
+  font-size: 10px;
+}
+
+body {
+  background: $ay-gray-blue;
+  -webkit-font-smoothing: antialiased;
+  padding: 0;
+  overflow-y: hidden;
+  height: 100vh;
+  position: relative;
+  min-height: 100%;
+  text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-app-region: drag;
+}
+
+input[type='submit'],
+input[type='reset'],
+input[type='button'],
+input[type='text'],
+button,
+textarea {
+  -webkit-app-region: no-drag;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  -webkit-user-select: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}

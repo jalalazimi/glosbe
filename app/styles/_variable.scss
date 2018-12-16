@@ -1,0 +1,27 @@
+$font-family-sans-serif: 'Noto Sans', sans-serif;
+
+$ay-pure: #fff;
+$ay-main-color: #28384e;
+$ay-second-blue: #354960;
+$ay-lighter-blue: #89a9ca;
+$ay-green: #8abe06;
+$ay-orange: #e77b06;
+$ay-red: #c2502f;
+$ay-blue: $ay-second-blue;
+$ay-white: #f0f0f0;
+$ay-gray: #e0e0e0;
+$ay-dark-gray: #555;
+$ay-gray-blue: #eceff1;
+$ay-darker-gray-blue: #dde3e8;
+$ay-black: #000;
+$spacer: 1em !default;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);
+
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';

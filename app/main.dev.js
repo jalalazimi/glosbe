@@ -83,7 +83,7 @@ app.on('ready', async () => {
     maximizable: false,
     fullscreen: false,
     fullscreenable: false,
-    width: 400,
+    width: 800,
     height: 600,
     title: 'Glosbe'
   });

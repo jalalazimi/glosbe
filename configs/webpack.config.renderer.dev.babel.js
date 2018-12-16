@@ -139,20 +139,9 @@ export default merge.smart(baseConfig, {
           }
         ]
       },
-      // WOFF Font
-      {
-        test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-        use: {
-          loader: 'url-loader',
-          options: {
-            limit: 10000,
-            mimetype: 'application/font-woff'
-          }
-        }
-      },
       // WOFF2 Font
       {
-        test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         use: {
           loader: 'url-loader',
           options: {
@@ -163,7 +152,7 @@ export default merge.smart(baseConfig, {
       },
       // TTF Font
       {
-        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         use: {
           loader: 'url-loader',
           options: {
