@@ -47,7 +47,7 @@ const options = Object.entries(Lang).map(v => ({
 
 const Props = {};
 
-const Header = ({
+const Language = ({
   sourceLanguage,
   targetLanguage,
   handleSourceLanguageChange,
@@ -121,4 +121,4 @@ const enhance = compose(
   })
 );
 
-export default enhance(Header);
+export default enhance(Language);
