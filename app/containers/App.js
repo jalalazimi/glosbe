@@ -5,11 +5,8 @@ type Props = {
   children: React.Node
 };
 
-export default class App extends React.Component<Props> {
-  props: Props;
+const App = ({ children }: Props) => (
+  <React.Fragment>{children}</React.Fragment>
+);
 
-  render() {
-    const { children } = this.props;
-    return <React.Fragment>{children}</React.Fragment>;
-  }
-}
+export default App;
