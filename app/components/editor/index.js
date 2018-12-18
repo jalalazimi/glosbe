@@ -74,7 +74,7 @@ const enhance = compose(
   lifecycle({
     componentDidMount() {
       const { focusEditor } = this.props;
-      focusEditor();
+      setTimeout(focusEditor(), 0);
     }
   })
 );
