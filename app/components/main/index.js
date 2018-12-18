@@ -1,26 +1,17 @@
 // @flow
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import routes from '../../constants/routes';
+import React from 'react';
 import Header from '../header';
 import Language from '../language';
 import Editor from '../editor';
 
-type Props = {};
+const Main = () => (
+  <div data-tid="container">
+    <Header />
+    <Language />
+    <Editor />
 
-export default class Main extends Component<Props> {
-  props: Props;
+    <h2>Home</h2>
+  </div>
+);
 
-  render() {
-    return (
-      <div data-tid="container">
-        <Header />
-        <Language />
-        <Editor />
-
-        <h2>Home</h2>
-        <Link to={routes.COUNTER}>to Counter</Link>
-      </div>
-    );
-  }
-}
+export default Main;
