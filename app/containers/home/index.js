@@ -1,13 +1,7 @@
 // @flow
-import React, { Component } from 'react';
+import React from 'react';
 import Main from '../../components/main';
 
-type Props = {};
+const Index = () => <Main />;
 
-export default class Index extends Component<Props> {
-  props: Props;
-
-  render() {
-    return <Main />;
-  }
-}
+export default Index;
