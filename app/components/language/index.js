@@ -19,7 +19,6 @@ const HeaderRow = styled.header`
       transform: scale(1.1);
     }
     :active {
-      transform: scale(1.3);
       outline: none;
     }
     :focus {
@@ -28,14 +27,26 @@ const HeaderRow = styled.header`
   }
 
   .react-select__control {
-    background: #f6f6f6;
-    border-color: #f6f6f6;
+    background: transparent;
+    border-color: transparent;
     border-radius: 50px;
+
+    input {
+      color: #ffffff !important;
+      text-align: center;
+      width: 100% !important;
+    }
     .react-select__indicator-separator {
-      background-color: #f6f6f6;
+      background-color: transparent;
     }
     .react-select__single-value {
-      color: #0b3953;
+      color: #ffffff;
+      text-align: center;
+      width: 100%;
+      text-transform: uppercase;
+    }
+    .react-select__dropdown-indicator {
+      display: none;
     }
   }
 `;
@@ -55,34 +66,36 @@ const Language = ({
   swap
 }: Props) => (
   <ThemeProvider theme={theme}>
-    <HeaderRow className="container-fluid pt-4">
-      <div className="row">
-        <div className="col-5">
-          <Select
-            className="react-select-container"
-            classNamePrefix="react-select"
-            value={sourceLanguage}
-            onChange={handleSourceLanguageChange}
-            options={options}
-          />
-        </div>
-        <div
-          className="col-2 text-center pt-2 swap"
-          role="button"
-          tabIndex="0"
-          onClick={swap}
-          onKeyPress={swap}
-        >
-          <Swap />
-        </div>
-        <div className="col-5">
-          <Select
-            className="react-select-container"
-            classNamePrefix="react-select"
-            value={targetLanguage}
-            onChange={handleTargetLanguageChange}
-            options={options}
-          />
+    <HeaderRow className="container-fluid pt-3">
+      <div className="col-10 m-auto">
+        <div className="row">
+          <div className="col-5">
+            <Select
+              className="react-select-container"
+              classNamePrefix="react-select"
+              value={sourceLanguage}
+              onChange={handleSourceLanguageChange}
+              options={options}
+            />
+          </div>
+          <div
+            className="col-2 text-center pt-2 swap"
+            role="button"
+            tabIndex="0"
+            onClick={swap}
+            onKeyPress={swap}
+          >
+            <Swap />
+          </div>
+          <div className="col-5">
+            <Select
+              className="react-select-container"
+              classNamePrefix="react-select"
+              value={targetLanguage}
+              onChange={handleTargetLanguageChange}
+              options={options}
+            />
+          </div>
         </div>
       </div>
     </HeaderRow>
