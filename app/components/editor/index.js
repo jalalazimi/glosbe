@@ -5,13 +5,23 @@ import { compose, withState, withHandlers, lifecycle } from 'recompose';
 import { Editor, EditorState } from 'draft-js';
 import theme from '../../styles/theme';
 
-const HeaderRow = styled.div`
-  background: #f6f6f6;
+const Container = styled.div`
+  background: #0b3953;
   font-size: 16px;
   border: none;
   border-bottom: 1px solid #d9dee2;
   overflow-x: auto;
-
+  height: 50px;
+  .editor {
+    position: absolute;
+    background: #ffffff;
+    width: 70%;
+    margin-left: -35%;
+    left: 50%;
+    height: 100px;
+    border-radius: 6px;
+    box-shadow: 0 3px 78px 0 rgba(0, 0, 0, 0.15);
+  }
   .DraftEditor-root {
     width: 90%;
     margin: auto;
@@ -30,23 +40,25 @@ let setEditor;
 
 const TextEditor = ({ state, setState, focusEditor }: Props) => (
   <ThemeProvider theme={theme}>
-    <HeaderRow
+    <Container
       className="container-fluid"
       tabIndex="0"
       role="Textbox"
       onClick={() => focusEditor}
       onKeyPress={() => focusEditor}
     >
-      <Editor
-        ref={ref => {
-          setEditor = ref;
-        }}
-        spellCheck
-        stripPastedStyles
-        editorState={state}
-        onChange={editorState => setState(editorState)}
-      />
-    </HeaderRow>
+      <div className="editor">
+        <Editor
+          ref={ref => {
+            setEditor = ref;
+          }}
+          spellCheck
+          stripPastedStyles
+          editorState={state}
+          onChange={editorState => setState(editorState)}
+        />
+      </div>
+    </Container>
   </ThemeProvider>
 );
 
